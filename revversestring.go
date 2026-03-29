@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+)
+
+func ReverseString(str *string) string {
+	runes := []rune(*str)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+func main() {
+	str := "ReverseStringReverseStringReverseStringReverseString"
+	str2 := "улыбоктебедедмакар улыбоктебедедмакар улыбоктебедедмакар"
+	fmt.Println(ReverseString(&str))
+	fmt.Println(ReverseString(&str2))
+}
